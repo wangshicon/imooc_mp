@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	
+	<settings>
+		<!-- 开启驼峰映射 ，为自定义的SQL语句服务-->
+		<!--设置启用数据库字段下划线映射到java对象的驼峰式命名属性，默认为false-->
+    	<setting name="mapUnderscoreToCamelCase" value="false"/>
+    	<!-- 如果数据为空的字段，则该字段省略不显示，可以通过添加配置文件，规定查询数据为空是则返回null -->
+    	<setting name="callSettersOnNulls" value="true"/>
+    </settings>
+    
+	<typeAliases >
+	    <typeAlias alias="Integer" type="java.lang.Integer"></typeAlias>
+	    <typeAlias alias="Long" type="java.lang.Long"></typeAlias>
+	    <typeAlias alias="HashMap" type="java.util.HashMap"></typeAlias>
+	    <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap"></typeAlias>
+	    <typeAlias alias="ArrayList" type="java.util.ArrayList"></typeAlias>
+	    <typeAlias alias="LinkedList" type="java.util.LinkedList"></typeAlias>
+	</typeAliases>
+	
+	<!-- <plugins>
+		Dynamic-add-date是基于Mybatis插件原理开发的可以动态在Insert和Update Sql语句中添加日期列和对应的值的插件
+         <plugin interceptor="io.github.yidasanqian.AddDateInterceptor">
+		     <property name="createDateColumnName" value="createdAt"/>
+		     <property name="updateDateColumnName" value="updatedAt"/>
+		     
+		     实际应用中并不是所有的表都需要创建时间和更新时间字段，如何设置忽略处理的表呢？
+		     其中name=ignoreTables属性值为固定，不能变，value的格式：表名, 表名。
+		     其中value的值为表名，支持正则表达式，且多个表名以英文逗号,分隔。
+		     <property name="ignoreTables" value="^user.*, permission"/>
+		 </plugin>
+	</plugins> -->
+	
+</configuration>

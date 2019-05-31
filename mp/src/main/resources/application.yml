@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mp?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+mybatis-plus:
+  # config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/**/*Mapper.xml #指定mapper.xml的位置
+  type-aliases-package: com.lord.mp.entity
+  global-config:
+    db-config:
+      id-type: uuid
+
+logging:
+  level:
+    root: warn
+    com.lord.mp.dao: trace
+  pattern:
+    console: '%p%m%n' #p:级别 m:内容 n:换行 
